@@ -54,6 +54,7 @@ echo "== secret/identifier scan =="
 while IFS= read -r f; do
   case "$f" in
     .git/*|.git) continue ;;
+    code/verify_public_export.sh) continue ;;  # scanner's own pattern lists
   esac
   for p in "${SECRET_PATTERNS[@]}" "${IDENT_PATTERNS[@]}"; do
     if grep -Enq "$p" "$f" 2>/dev/null; then
