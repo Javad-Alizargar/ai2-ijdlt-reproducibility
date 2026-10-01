@@ -1,0 +1,35 @@
+{
+  "task_id": "example_synthetic_task",
+  "family_id": "fam_synthetic",
+  "intended_inquiry_skill": "evidence_finding",
+  "language": "en",
+  "question": "SYNTHETIC FIXTURE QUESTION — never used as research evidence.",
+  "role": "professor",
+  "mode": "Teaching evidence summary",
+  "specialty": "fixture",
+  "response_language": "en",
+  "paper_count": 12,
+  "year_range": "last5",
+  "prefer_recent": true,
+  "use_journal_rank": false,
+  "set": "dev",
+  "run_slot": 1,
+  "fixture": true,
+  "public_source_provenance": {
+    "title": "Synthetic fixture source",
+    "publisher": "tests",
+    "stable_url_or_doi": "https://example.org/fixture-source",
+    "version_or_access_date": "2026-10-01"
+  },
+  "evidence_cutoff": "2026-09",
+  "required_answer_elements": [
+    {"element_id": "E1", "description": "Synthetic element one", "supporting_sections": "fixture §1"},
+    {"element_id": "E2", "description": "Synthetic element two", "supporting_sections": "fixture §2"},
+    {"element_id": "E3", "description": "Synthetic element three", "supporting_sections": "fixture §3"},
+    {"element_id": "E4", "description": "Synthetic element four", "supporting_sections": "fixture §4"},
+    {"element_id": "E5", "description": "Synthetic element five", "supporting_sections": "fixture §5"}
+  ],
+  "acceptable_alternative_sources": ["https://example.org/fixture-alt"],
+  "disqualifying_errors": ["fabricated citation"],
+  "scoring_rubric": {"E1": "supported_and_correctly_cited"}
+}

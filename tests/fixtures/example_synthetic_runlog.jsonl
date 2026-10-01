@@ -1,0 +1,3 @@
+{"run_id": "example_synthetic_task__A__r1", "task_id": "example_synthetic_task", "arm": "A", "family_id": "fam_synthetic", "status": "done", "config_hash": "synthetic-cfg", "run_slot": 1, "answer_text": "synthetic answer A", "fixture": true}
+{"run_id": "example_synthetic_task__B__r1", "task_id": "example_synthetic_task", "arm": "B", "family_id": "fam_synthetic", "status": "done", "config_hash": "synthetic-cfg", "run_slot": 1, "answer_text": "synthetic answer B", "fixture": true}
+{"run_id": "example_synthetic_task__A__r2", "task_id": "example_synthetic_task", "arm": "A", "family_id": "fam_synthetic", "status": "run_failed", "config_hash": "synthetic-cfg", "run_slot": 2, "answer_text": "", "fixture": true}

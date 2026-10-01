@@ -15,6 +15,29 @@ repo.
 | .gitignore | reproducibility/public_templates/.gitignore | APPROVED round 1 |
 | code/verify_public_export.sh | reproducibility/verify_public_export.sh | APPROVED round 1 |
 
+## Approved for Round 2 (harness transparency set)
+
+| path (public repo) | source (private repo) | status |
+|---|---|---|
+| code/benchmark/provider_adapter.py | code/benchmark/provider_adapter.py | APPROVED round 2 (no secrets; policy code) |
+| code/benchmark/run_benchmark.py | code/benchmark/run_benchmark.py | APPROVED round 2 (orchestrator; documents private dependencies) |
+| code/benchmark/validate_tasks.py | code/benchmark/validate_tasks.py | APPROVED round 2 |
+| code/benchmark/build_rating_package.py | code/benchmark/build_rating_package.py | APPROVED round 2 |
+| code/benchmark/analyze_ratings.py | code/benchmark/analyze_ratings.py | APPROVED round 2 |
+| code/benchmark/estimate_budget.py | code/benchmark/estimate_budget.py | APPROVED round 2 |
+| tests/test_harness.py | tests/test_harness.py | APPROVED round 2 (synthetic fixtures only) |
+| tests/fixtures/README.md + example_*.{json,jsonl,csv} | same paths | APPROVED round 2 (labeled synthetic) |
+| protocols/benchmark_plan_v2.md | protocols/benchmark_plan_v2.md | APPROVED round 2 (protocol documentation) |
+| protocols/task_sampling_plan.md | protocols/task_sampling_plan.md | APPROVED round 2 |
+| evaluation/rater_instructions.md | evaluation/rater_instructions.md | APPROVED round 2 (no data) |
+| evaluation/annotation_codebook.md | evaluation/annotation_codebook.md | APPROVED round 2 (no data) |
+
+NOT exported in Round 2 (deliberate): pipeline_bridge.js and
+extract_prompts.js (depend on private frozen extracts), frozen prompt text,
+all task JSONs (dev + held-out until locked), run logs, ratings, and any
+workshop-derived material. The public README documents this dependency
+honestly.
+
 ## Queued for Round 2+ (requires review before export)
 
 | item | gate |

@@ -1,0 +1,6 @@
+rating_id,rater_id,run_id,task_id,family_id,element_id,rating,notes,ref_verified,fabrication_flag,contradiction_flag,refusal_flag
+SYN1,R1,example_synthetic_task__A__r1,example_synthetic_task,fam_synthetic,E1,supported_and_correctly_cited,synthetic,yes,no,no,no
+SYN2,R1,example_synthetic_task__A__r1,example_synthetic_task,fam_synthetic,E2,,synthetic blank field,no,no,no,no
+SYN3,R1,example_synthetic_task__A__r1,example_synthetic_task,fam_synthetic,E3,supported_and_correctly_cited,synthetic,yes,no,no,no
+SYN4,R1,example_synthetic_task__A__r1,example_synthetic_task,fam_synthetic,E4,supported_and_correctly_cited,synthetic,yes,no,no,no
+SYN5,R1,example_synthetic_task__A__r1,example_synthetic_task,fam_synthetic,E5,supported_and_correctly_cited,synthetic,yes,no,no,no

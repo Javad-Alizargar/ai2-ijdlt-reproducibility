@@ -11,6 +11,21 @@ ALLOWED=(
   "environment_public.md"
   ".gitignore"
   "code/verify_public_export.sh"
+  "code/benchmark/provider_adapter.py"
+  "code/benchmark/run_benchmark.py"
+  "code/benchmark/validate_tasks.py"
+  "code/benchmark/build_rating_package.py"
+  "code/benchmark/analyze_ratings.py"
+  "code/benchmark/estimate_budget.py"
+  "tests/test_harness.py"
+  "tests/fixtures/README.md"
+  "tests/fixtures/example_synthetic_task.json"
+  "tests/fixtures/example_synthetic_runlog.jsonl"
+  "tests/fixtures/example_synthetic_ratings.csv"
+  "protocols/benchmark_plan_v2.md"
+  "protocols/task_sampling_plan.md"
+  "evaluation/rater_instructions.md"
+  "evaluation/annotation_codebook.md"
 )
 
 SECRET_PATTERNS=(

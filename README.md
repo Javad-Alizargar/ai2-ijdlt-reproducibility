@@ -8,18 +8,26 @@ Public reproducibility workspace for the study:
 Target journal: International Journal on Digital Learning Technology
 (數位學習科技期刊, ISSN 2071-260X).
 
-## Status (Round 1)
+## Status (Round 2)
 
-The study is UNDER DEVELOPMENT. This repository currently contains only a
-minimal, accurate scaffold. It does not yet contain data, results, or claims.
+The study is UNDER DEVELOPMENT. This repository contains the shareable
+harness-transparency set (policy-compliant provider adapter, orchestrator,
+task/rating validators, gated analysis script, budget estimator, synthetic
+fixture tests, and protocol documentation). No participant records, private
+production code, manuscript drafts, findings, task questions, held-out
+answers, or ratings are included.
 
-- No participant records, private production code, manuscript drafts, findings,
-  or claims of an available validated dataset are included.
-- Planned public deliverables (benchmark harness, frozen task registry,
-  evaluation rubric, aggregate statistics, figure/table scripts) will be
-  published here in later rounds after the export review defined in
-  EXPORT_ALLOWLIST.md and after the human-data permission questions are
-  resolved with the author's institution.
+KNOWN PARTIAL DEPENDENCY (recorded honestly): the benchmark orchestrator
+references two components that live only in the private research repository —
+the frozen-pipeline bridge (Node) and the hash-pinned prompt file extracted
+from the author's production code. This harness is therefore shared for
+transparency and audit, but is not fully runnable by itself without those
+private components. All policy logic, gates, and analysis paths are
+independently testable with the included synthetic fixtures.
+
+Planned later exports (after gates in EXPORT_ALLOWLIST.md): frozen task
+registry (after evaluation lock), rubric, aggregate-only statistics (after
+permission resolution), and figure/table scripts.
 
 ## What AI2 is (verified from the deployed system)
 
