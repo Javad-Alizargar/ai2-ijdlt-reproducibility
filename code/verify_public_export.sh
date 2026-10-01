@@ -26,6 +26,9 @@ ALLOWED=(
   "protocols/task_sampling_plan.md"
   "evaluation/rater_instructions.md"
   "evaluation/annotation_codebook.md"
+  "code/benchmark/paired_proportions.py"
+  "code/benchmark/make_manifest.py"
+  "reproducibility_gaps.md"
 )
 
 SECRET_PATTERNS=(

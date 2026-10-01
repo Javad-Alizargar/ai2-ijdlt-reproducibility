@@ -36,7 +36,15 @@ learners that retrieves PubMed and OpenAlex literature first and then uses a
 language model to synthesize cited answers restricted to retrieved sources,
 with a citation-supervision pass and an insufficient-evidence refusal path.
 It was used in a hands-on session of the StatWhy Clinical AI Workshop
-(2026-09-15, NTUNHS), and same-day expert-informed revisions are archived.
+(2026-09-15, NTUNHS), and same-day software revisions are documented with
+verified file timestamps.
+
+Word-choice notice (corrected wording): the revisions are "same-day"
+in the verified sense that archived releases exist on the workshop date.
+Credentials/expertise of workshop attendees were self-reported and are NOT
+independently verified; research use of the workshop records is CONDITIONAL
+on permission documentation; and timing alone is insufficient to establish
+that any particular response caused a change.
 
 ## Contents
 

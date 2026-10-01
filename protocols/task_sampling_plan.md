@@ -52,7 +52,7 @@ Constraints:
   the registry).
 - Runs within a task are repetitions, never additional observations.
 
-## 3. Sample-size and precision rationale (pre-registered choice logic)
+## 3. Sample-size and precision rationale (frozen choice logic; a local Git freeze is NOT a public preregistration)
 
 The 24 answerable families + 4 challenges is a FEASIBILITY STARTING POINT,
 not an established adequate size. We choose the final n from {24, 40, 60}
@@ -63,13 +63,16 @@ code/benchmark/estimate_budget.py (not by looking at pilot results):
   expected range p ∈ [0.5, 0.9].
 - CI half-width target: 95% CI half-width ≤ ±0.15 (n=24 gives ±0.20 at p=0.5,
   ±0.16 at p=0.8; n=40 gives ±0.155/±0.124; n=60 gives ±0.127/±0.101).
-- Confirmatory McNemar power (exact, two-sided α=0.05, computed by
-  code/benchmark/estimate_budget.py, not by pilot results): at n=24 power is
+- McNemar power (exact, two-sided α=0.05, computed by
+  code/benchmark/estimate_budget.py's power helper at freeze time, NOT from
+  pilot results): at n=24 power is
   LOW for moderate effects (0.14 at 30% discordant families with 75/25 split;
   0.49 at 40% discordant with 85/15); at n=40: 0.31/0.79; at n=60: 0.50/0.94.
   Consequence: the primary reported quantity is the paired rate difference
-  WITH CI; McNemar is confirmatory and only decisive with large discordant
-  counts; otherwise results are a feasibility benchmark with uncertainty.
+  WITH score-interval CI; McNemar remains the prespecified paired test
+  (status fixed a priori, never reclassified from observed discordance);
+  if neither CI nor test is decisive, results are a feasibility benchmark
+  with uncertainty.
 - Budget interaction: each arm-A family costs 3 runs × (answer + supervisor)
   + arm B 3 runs × 1 call + retrieval; n=60 ≈ 540 model calls ≈ US$2.4 at
   pinned pricing and stated token assumptions, ≈19 rater-hours; n=24 ≈ 216

@@ -81,10 +81,17 @@ Clarifications (binding):
   preserves task families in resampling (bootstrap over families, not over
   runs; runs nested in families).
 - Primary test: two-sided exact McNemar on discordant task-family pairs
-  (arm A vs arm B), α=0.05, with 95% CI for the paired rate difference
-  (Wilson/Newcombe interval for paired proportions).
+  (arm A vs arm B), α=0.05 — a prespecified paired hypothesis test whose
+  a-priori power characteristics are recorded in the sampling plan. Its
+  confirmatory status is fixed NOW and is NOT reclassified from observed
+  discordant counts; primary reporting remains CI-based.
+- Paired rate difference CI: score interval for the paired difference of
+  proportions using the full 2×2 table (Tango 1998, Stat Med 17(8):891-908;
+  Newcombe 1998 Method 10, Stat Med 17(22):2635-50), implemented and
+  validated in code/benchmark/paired_proportions.py; zero-discordance cases
+  are flagged degenerate rather than reported as zero uncertainty.
 - If independent-pair assumptions cannot be supported after inspecting the
-  run structure, the pre-registered fallback is a cluster-aware comparison
+  run structure, the pre-specified fallback (frozen in Git before the run) is a cluster-aware comparison
   (families as clusters; exact permutation test over families) — decided
   BEFORE the main evaluation from pilot data structure, not after seeing
   held-out results.

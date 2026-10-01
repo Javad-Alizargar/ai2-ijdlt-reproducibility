@@ -86,6 +86,30 @@ def config_hash() -> str:
     }, sort_keys=True))
 
 
+def shared_config_hash() -> str:
+    """Common settings that MUST match across arms (model + generation)."""
+    return sha256(json.dumps({
+        "model": MODEL, "answer_temp": ANSWER_TEMP, "answer_max_tokens": ANSWER_MAX_TOKENS,
+    }, sort_keys=True))
+
+
+def arm_config_hash(arm: str) -> str:
+    """Arm-specific frozen specification (verified per arm, not cross-arm)."""
+    if arm == "A":
+        return sha256(json.dumps({
+            "arm": "A", "pipeline_prompts_sha256": sha256_file(PROMPTS_PATH),
+            "bridge_sha256": sha256_file(BRIDGE),
+            "supervisor_temp": SUPERVISOR_TEMP,
+            "supervisor_max_tokens": SUPERVISOR_MAX_TOKENS,
+            "pipeline_settings": {"paper_count": 12, "year_range": "last5",
+                                  "prefer_recent": True, "use_journal_rank": False},
+        }, sort_keys=True))
+    return sha256(json.dumps({
+        "arm": "B", "baseline_prompt": BASELINE_SYSTEM_PROMPT,
+        "answer_temp": ANSWER_TEMP, "answer_max_tokens": ANSWER_MAX_TOKENS,
+    }, sort_keys=True))
+
+
 def load_task(tasks_dir: Path, task_id: str) -> dict:
     p = tasks_dir / f"{task_id}.json"
     if not p.exists():
@@ -164,7 +188,10 @@ def arm_a_run(task: dict, run_id: str, run_dir: Path, cache_dir: Path, prompts: 
     rec = {"arm": "A", "run_id": run_id, "task_id": task["task_id"],
            "family_id": task.get("family_id"), "set": task.get("set"),
            "response_language": task.get("response_language", "en"),
-           "config_hash": config_hash(), "dry_run": dry_run}
+           "config_hash": config_hash(),
+           "shared_config_hash": shared_config_hash(),
+           "arm_config_hash": arm_config_hash("A"),
+           "dry_run": dry_run}
 
     t0 = time.time()
     tmp = run_dir / "tmp" / run_id
@@ -242,7 +269,10 @@ def arm_b_run(task: dict, run_id: str, run_dir: Path, api_key: str,
     rec = {"arm": "B", "run_id": run_id, "task_id": task["task_id"],
            "family_id": task.get("family_id"), "set": task.get("set"),
            "response_language": task.get("response_language", "en"),
-           "config_hash": config_hash(), "dry_run": dry_run}
+           "config_hash": config_hash(),
+           "shared_config_hash": shared_config_hash(),
+           "arm_config_hash": arm_config_hash("B"),
+           "dry_run": dry_run}
     t0 = time.time()
     msgs = build_baseline_messages(task)
     ans = call("openai", MODEL, msgs, max_output_tokens=ANSWER_MAX_TOKENS, api_key=api_key,

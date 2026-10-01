@@ -23,14 +23,17 @@ repo.
 | code/benchmark/run_benchmark.py | code/benchmark/run_benchmark.py | APPROVED round 2 (orchestrator; documents private dependencies) |
 | code/benchmark/validate_tasks.py | code/benchmark/validate_tasks.py | APPROVED round 2 |
 | code/benchmark/build_rating_package.py | code/benchmark/build_rating_package.py | APPROVED round 2 |
-| code/benchmark/analyze_ratings.py | code/benchmark/analyze_ratings.py | APPROVED round 2 |
-| code/benchmark/estimate_budget.py | code/benchmark/estimate_budget.py | APPROVED round 2 |
-| tests/test_harness.py | tests/test_harness.py | APPROVED round 2 (synthetic fixtures only) |
+| code/benchmark/analyze_ratings.py | code/benchmark/analyze_ratings.py | APPROVED round 2 (2B rewrite) |
+| code/benchmark/estimate_budget.py | code/benchmark/estimate_budget.py | APPROVED round 2 (2B rewrite) |
+| code/benchmark/paired_proportions.py | code/benchmark/paired_proportions.py | APPROVED round 2B |
+| code/benchmark/make_manifest.py | code/benchmark/make_manifest.py | APPROVED round 2B |
+| tests/test_harness.py | tests/test_harness.py | APPROVED round 2 (2B: 22 adversarial tests; synthetic fixtures only) |
 | tests/fixtures/README.md + example_*.{json,jsonl,csv} | same paths | APPROVED round 2 (labeled synthetic) |
-| protocols/benchmark_plan_v2.md | protocols/benchmark_plan_v2.md | APPROVED round 2 (protocol documentation) |
-| protocols/task_sampling_plan.md | protocols/task_sampling_plan.md | APPROVED round 2 |
+| protocols/benchmark_plan_v2.md | protocols/benchmark_plan_v2.md | APPROVED round 2 (2B wording fixes) |
+| protocols/task_sampling_plan.md | protocols/task_sampling_plan.md | APPROVED round 2 (2B wording fixes) |
 | evaluation/rater_instructions.md | evaluation/rater_instructions.md | APPROVED round 2 (no data) |
 | evaluation/annotation_codebook.md | evaluation/annotation_codebook.md | APPROVED round 2 (no data) |
+| reproducibility_gaps.md | reproducibility/reproducibility_gaps.md | APPROVED round 2B |
 
 NOT exported in Round 2 (deliberate): pipeline_bridge.js and
 extract_prompts.js (depend on private frozen extracts), frozen prompt text,
